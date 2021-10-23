@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-public class Solution
+public class Num
 {
     public int solution(string s)
     {
