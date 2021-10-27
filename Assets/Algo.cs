@@ -4,29 +4,30 @@ using UnityEngine;
 using System.Linq;
 public class Algo : MonoBehaviour
 {
-    int[] numbers= { 1, 2, 3, 4, 5, 6, 7 };
+
     // Start is called before the first frame update
     void Start()
     {
-        int[] answer = new int[numbers.Length];
-
-        int num1 = 0;
-        int num2 = 0;
-        for (int i = 0; i < numbers.Length; i++)
+        long num = 626331;
+        for (int i = 0; i<500; i++)
         {
-            for (int j = i + 1; j < numbers.Length; i++)
+            if(num%2==0)
             {
-                num1 = numbers[i];
-                num2 = numbers[j];
-                int num3 = num1 + num2;
-                print(num3);
+                num = num / 2;
             }
+            else if(num%2==1)
+            {
+                num = num * 3 + 1; 
+            }
+            i++;
+            print(i + ":" + num);
         }
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
     }
 }
