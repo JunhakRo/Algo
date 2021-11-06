@@ -3,31 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using System;
 
-
-public class Algo : MonoBehaviour
+public class Sosu : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
-      
-
-
-
+        solution(10);
+        
     }
-
-    // Update is called once per frame
-    void Update()
+        public List<int> num = new List<int>();
+    public int solution(int n)
     {
-
+        int answer = 0;
         bool sosu = true;
-        int a = 0;
-        for (int i = 2; i <= 7; i++)
+        for (int i = 2; i <= n; i++)
         {
             sosu = true;
+            
             for (int j = 2; j * j <= i; j++)
             {
-                if (i != j && i % 2 == 0)
+                if (i != j && i % j == 0)
                 {
                     sosu = false;
                     break;
@@ -35,10 +29,10 @@ public class Algo : MonoBehaviour
             }
             if (sosu)
             {
-                a++;
+                answer++;
             }
 
         }
-
+        return answer;
     }
 }
