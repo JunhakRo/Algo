@@ -10,35 +10,30 @@ public class Algo : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-      
+
 
 
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-
-        bool sosu = true;
-        int a = 0;
-        for (int i = 2; i <= 7; i++)
+   
+        public bool solution(string s)
         {
-            sosu = true;
-            for (int j = 2; j * j <= i; j++)
+            bool answer =false;
+            int b;
+
+            if (s.Length == 4 || s.Length == 6)
             {
-                if (i != j && i % 2 == 0)
+                if (int.TryParse(s, out b))
                 {
-                    sosu = false;
-                    break;
+                    answer = true;
                 }
-            }
-            if (sosu)
-            {
-                a++;
-            }
+                else
+                {
+                    answer = false;
+                }
 
+            }
+            return answer;
         }
-
     }
-}
