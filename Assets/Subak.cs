@@ -14,8 +14,6 @@ public class Subak : MonoBehaviour
         for (int i = 0; i < n; i++)
         {
             answer += ch[i % 2];
-           
-
         }
         return answer;
     }

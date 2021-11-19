@@ -3,33 +3,46 @@ using System.Collections.Generic;
 using UnityEngine;
 
 
+
 public class Algo : MonoBehaviour
 {
-
-    // Start is called before the first frame update
-    void Start()
+    private void Update()
     {
+        int[] a = { 1, 1, 1, 1, 1 };
+        solution(a,3);
+    }
+    public int solution(int[] numbers, int target)
+    {
+        int answer = 0;
+        List<int> num = new List<int>();
+        List<int> count = new List<int>();
 
-        string answer = "";
-        string a = "¼ö¹Ú";
-        
-        int n =4;
-        char[] ch = a.ToCharArray();
-        
-        for (int i = 0; i < n; i++)
+
+        for (int i = 0; i < numbers.Length; i++)
         {
-            answer+=ch[i % 2];
+            num.Add(i);
+
+            int a = Random.Range(0, 2);
+            if (a == 0)
+            {
+                num[i] = -num[i];
+            }
+            else if (a == 1)
+            {
+                num[i] = num[i];
+            }
+            answer += num[i];
+
             print(answer);
-           
+        if (answer == target)
+        {
+            count.Add(answer);
+            print(count.Count);
         }
 
+        }
+
+        return answer;
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-            
-
-    }
 }
