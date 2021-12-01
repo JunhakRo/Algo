@@ -10,50 +10,49 @@ namespace Decomposition
         //216의 분해합을 198 이다 ...
         static void Main(string[] args)
         {
-            List<int> sumList = new List<int>();
-            string N_num = Console.ReadLine();
-            int N = int.Parse(N_num);
+            
+            int N = int.Parse(Console.ReadLine());
             //나머지값 
             int result = 0;
             //나머지값의 합
             int result_sum = 0;
             //증가값 
-            int number = AddNum(N);
+            int number = 0;
 
-            if (number < N)
+            int sum = 0;
+            int answer = 0;
+            for (int i = 1; i <= N; i++)
             {
-
-                number++;
-
-                int division = (int)number / 10;
-
-
+                result = 0;
+                result_sum = 0;
+                number = i;
+                int division = number / 10;
                 //나머지의 합 구하는 공식
                 while (division > 0)
                 {
-
-                    result = N % 10;
+                    result = number % 10;
                     result_sum += result;
 
-
-                    N = division;
-                    division = (int)N / 10;
-
-
+                    number = division;
+                    division = (int)number / 10;
                 }
                 if (division == 0)
                 {
-                    result = N;
+                    result = number;
                     result_sum += result;
                 }
-
-                if (result_sum + number == N)
+                sum = i + result_sum;
+                if (sum == N)
                 {
-                    sumList.Add(number);
-                    Console.WriteLine(sumList[0]);
+                    answer = i;
+                    Console.WriteLine(answer);
+                    return; 
                 }
-
+                answer = 0;
             }
+
+            Console.WriteLine(answer);
+            
         }
 
 
