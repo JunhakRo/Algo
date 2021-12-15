@@ -17,8 +17,7 @@ namespace stack
             s.Pop();
             while(s.Count!=0)
             {
-                Console.WriteLine(s.Peek());
-                s.Pop();
+                Console.WriteLine(s.Pop());
             }
 
         }
