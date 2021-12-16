@@ -37,7 +37,7 @@ namespace SortList
             valType.Add(new KeyValuePair<string, KeyValuePair<int, int>>("홍승민", new KeyValuePair<int, int>(28, 95)));
             valType.Add(new KeyValuePair<string, KeyValuePair<int, int>>("정광훈", new KeyValuePair<int, int>(25, 97)));
 
-            valType.Sort();
+            valType.Sort((a,b)=>b.Value.Value.CompareTo(a.Value.Value);
 
             foreach(var rank in valType)
             {
@@ -45,15 +45,15 @@ namespace SortList
             }
         }
 
-        public bool Compare(KeyValuePair<string, KeyValuePair<int, int>> a, KeyValuePair<string, KeyValuePair<int, int>> b)
-        {
-            if(a.Value.Key == b.Value.Key)
-            {
-                return a.Value.Value > b.Value.Value;
-            }
-            else { 
-                return a.Value.Key > b.Value.Key;
-            }
-        }
+        //public bool Compare(KeyValuePair<string, KeyValuePair<int, int>> a, KeyValuePair<string, KeyValuePair<int, int>> b)
+        //{
+        //    if(a.Value.Key == b.Value.Key)
+        //    {
+        //        return a.Value.Value > b.Value.Value;
+        //    }
+        //    else { 
+        //        return a.Value.Key > b.Value.Key;
+        //    }
+        //}
     }
 }
